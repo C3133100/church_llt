@@ -1030,3 +1030,74 @@ ul.link li a::after {
      margin-top: 70px;
 }
 
+.slider {
+     max-width: 960px;
+     width: 100%;
+     margin: auto;
+     overflow: hidden; // 這邊很重要 一定要加，若想看到底怎麼跑的，可以先槓掉，就可以看出ul向左移動的軌跡
+     position: relative; 
+     background-color: #999;
+ 
+     ul.list {
+       position: relative;
+       width: 100%;
+       left: 0;
+       font-size: 0;
+ 
+       li {
+         display: inline-block;
+         vertical-align: middle;
+         text-align: center;
+         padding: 10px;
+         box-sizing: border-box;
+ 
+         a {
+           display: block;
+           img {
+             max-width: 100%;
+           }
+         }
+       }
+     }
+ 
+     .status {
+       text-align: center;
+       padding: 10px;
+       .dot {
+         cursor: pointer;
+         height: 15px;
+         width: 15px;
+         margin: 0 5px;
+         background-color: #fff;
+         border-radius: 50%;
+         display: inline-block; //這樣寬高才會出來
+         transition: background-color 0.6s ease;
+         &.active,
+         &:hover {
+           background-color: #000;
+         }
+       }
+     }
+   }
+ 
+   .dIcon {
+     position: absolute;
+     top: 50%;
+     transform: translate(0%, -50%);
+     display: block;
+     width: 38px;
+     height: 38px;
+   }
+   .next {
+     right: 0;
+     background: url("https://cdn-icons-png.flaticon.com/512/3753/3753200.png")
+       no-repeat;
+     background-size: cover;
+   }
+   .prev {
+     left: 0;
+     background: url("https://cdn-icons-png.flaticon.com/512/3753/3753205.png")
+       no-repeat;
+     background-size: cover;
+   }
+
